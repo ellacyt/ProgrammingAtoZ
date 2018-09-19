@@ -1,4 +1,4 @@
-# ProgrammingAtoZ
+# Programming A to Z
 
 ## Assignments: 
 -  [Week 1](https://ellacyt.github.io/ProgrammingAtoZ/DiasticName/)
