@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Diastic Name</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500,700" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js" type="text/javascript"></script>
+    <script src="sketch.js" type="text/javascript"></script>
+    <script src="diastic.js" type="text/javascript"></script>
+
+    <style>
+      body {
+        padding: 20px;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 28px;
+        line-height: 1.5;
+        font-weight: 600;
+        color: #303030;
+        font-weight: 300;
+        position: relative;
+      }
+
+      .file {
+        margin-top: 24px;
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      .text {
+        padding: 20px 20px 20px 20px;
+        text-align: center;
+        font-family: 'Roboto', monospace;
+        font-size: 30px;
+        font-weight: 300;
+        color: #303030;
+        font-weight: 300;
+        position: relative;
+        top: 75px;
+      }
+
+      #drop_zone {
+        padding: 20px;
+        border-style: dotted;
+        width: 200px;
+        text-align: center;
+      }
+
+      #submit {
+        margin-top: 20px;
+        line-height: 50px;
+        font-weight: bold;
+        padding: 0 20px;
+        background: #f3f3f3;
+        border: none;
+      }
+
+      #clear {
+        margin-top: 20px;
+        line-height: 50px;
+        font-weight: bold;
+        padding: 0 40px;
+        background: #f3f3f3;
+        border: none;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+    <h1>Diastic Name</h1>
+
+    <br>
+
+    <p>Random personalities of your name</p>
+
+    <p>
+      <a href="#" id ="sample">discover your personalities</a>
+    </p>
+
+    <p>
+      <textarea id = "textinput" rows="5" cols="100">Enter some text</textarea><br/>
+    </p>
+
+    <p>
+      Enter name: <br> <input id = "seed" value="Dan"></input>
+    </p>
+
+    <p><button id = "submit">submit</button> <button id = "clear">clear</button></p>
+
+
+  </body>
+</html>
