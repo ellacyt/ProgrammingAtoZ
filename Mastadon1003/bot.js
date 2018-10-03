@@ -1,15 +1,16 @@
 console.log('The bot is starting');
 
 const config = require('./config.js');
-const Mastodon = require('mastodon-api')
+const Mastodon = require('mastodon-api');
+const fs = require('fs');
 const M = new Mastodon(config);
 
 const stream = fs.createReadStream('kitten.jpg');
 
-const params = {
+const media = {
   file: stream,
   description: 'A cute grey kitten holding a blanket found on google image',
-}
+};
 
 M.post('media', media).
 then(response => {
