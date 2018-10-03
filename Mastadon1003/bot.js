@@ -4,16 +4,17 @@ const config = require('./config.js');
 const Mastodon = require('mastodon-api')
 const M = new Mastodon(config);
 
-//console.log(M);
-
 const params = {
   file: 'kitten.jpg',
   description: 'A cute grey kitten holding a blanket found on google image',
 }
 
 M.post('media', params).
-then(response=>console.log(response)).
-catch(error=>console.log(error));
+then(response => {
+  console.log(response);
+  fs.writeFilesSync('response.json',JSON.stringify(response, null, 2));
+}).
+catch(error => console.log(error));
 
 // toot();
 
