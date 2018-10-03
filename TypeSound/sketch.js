@@ -15,6 +15,36 @@ let randomWordURL = "https://api.wordnik.com/v4/words.json/randomWord?" +
 let input;
 let inputText = '';
 
+function preload(){
+
+      a = loadSound('assets/a.mp3');
+      b = loadSound('assets/b.mp3');
+      c = loadSound('assets/c.mp3');
+      d = loadSound('assets/d.mp3');
+      e = loadSound('assets/e.mp3');
+      f = loadSound('assets/f.mp3');
+      g = loadSound('assets/g.mp3');
+      h = loadSound('assets/h.mp3');
+      i = loadSound('assets/i.mp3');
+      j = loadSound('assets/j.mp3');
+      k = loadSound('assets/k.mp3');
+      l = loadSound('assets/l.mp3');
+      m = loadSound('assets/m.mp3');
+      n = loadSound('assets/n.mp3');
+      o = loadSound('assets/o.mp3');
+      p = loadSound('assets/p.mp3');
+      q = loadSound('assets/q.mp3');
+      r = loadSound('assets/r.mp3');
+      s = loadSound('assets/s.mp3');
+      t = loadSound('assets/t.mp3');
+      u = loadSound('assets/u.mp3');
+      v = loadSound('assets/v.mp3');
+      w = loadSound('assets/w.mp3');
+      x = loadSound('assets/x.mp3');
+      y = loadSound('assets/y.mp3');
+      z = loadSound('assets/z.mp3');
+}
+
 function setup() {
   noCanvas();
   // Some buttons
@@ -23,32 +53,6 @@ function setup() {
 
     input = select('#textinput');
 
-    a = loadSound('assets/a.mp3');
-    b = loadSound('assets/b.mp3');
-    c = loadSound('assets/c.mp3');
-    d = loadSound('assets/d.mp3');
-    e = loadSound('assets/e.mp3');
-    f = loadSound('assets/f.mp3');
-    g = loadSound('assets/g.mp3');
-    h = loadSound('assets/h.mp3');
-    i = loadSound('assets/i.mp3');
-    j = loadSound('assets/j.mp3');
-    k = loadSound('assets/k.mp3');
-    l = loadSound('assets/l.mp3');
-    m = loadSound('assets/m.mp3');
-    n = loadSound('assets/n.mp3');
-    o = loadSound('assets/o.mp3');
-    p = loadSound('assets/p.mp3');
-    q = loadSound('assets/q.mp3');
-    r = loadSound('assets/r.mp3');
-    s = loadSound('assets/s.mp3');
-    t = loadSound('assets/t.mp3');
-    u = loadSound('assets/u.mp3');
-    v = loadSound('assets/v.mp3');
-    w = loadSound('assets/w.mp3');
-    x = loadSound('assets/x.mp3');
-    y = loadSound('assets/y.mp3');
-    z = loadSound('assets/z.mp3');
 }
 
 // Load the JSON for each one
