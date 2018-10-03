@@ -4,7 +4,7 @@ const config = require('./config.js');
 const Mastodon = require('mastodon-api')
 const M = new Mastodon(config);
 
-const stream = fs.createReadStream('kitte.jpg');
+const stream = fs.createReadStream('kitten.jpg');
 
 const params = {
   file: stream,
@@ -17,8 +17,14 @@ then(response => {
   // fs.writeFilesSync('response.json',JSON.stringify(response, null, 2));
   const toot = {
     status: 'Kitten!',
-    media_ids: [response.data]
+    media_ids: [response.data.id]
   }
+  return M.post('statuses',toot);
+}).
+then(response => {
+  console.log("Success!");
+  console.log(`id: ${response.data.id} at ${response.data.created_at}`);
+  console.log("FINISHED!")
 }).
 catch(error => console.log(error));
 
