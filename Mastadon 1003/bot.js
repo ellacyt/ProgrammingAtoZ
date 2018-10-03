@@ -6,27 +6,36 @@ const M = new Mastodon(config);
 
 //console.log(M);
 
-toot();
+const params = {
+  file: 'kitten.jpg',
+  description: 'A cute grey kitten holding a blanket found on google image',
+}
 
-setInterval(toot, 1000*60*5);
+M.post('media', params).
+then(response=>console.log(response)).
+catch(error=>console.log(error));
 
-function toot(){
+// toot();
 
-  const num = Math.floor(Math.random()*100);
-  const params = {
-    spoiler_text: "The meaning of life is...",
-    status: num
-  }
+// setInterval(toot, 1000*60*5);
 
-M.post('statuses',params).
-  then(response => {
-  console.log("Success!");
-  console.log(`id: ${response.data.id} at ${response.data.created_at}`);
-}).
-  catch(error => {
-  console.log("OOPS");
-  console.error(error);
-});
+// function toot(){
+
+//   const num = Math.floor(Math.random()*100);
+//   const params = {
+//     spoiler_text: "The meaning of life is...",
+//     status: num
+//   }
+
+// M.post('statuses',params).
+//   then(response => {
+//   console.log("Success!");
+//   console.log(`id: ${response.data.id} at ${response.data.created_at}`);
+// }).
+//   catch(error => {
+//   console.log("OOPS");
+//   console.error(error);
+// });
 
 // M.post('statuses', params, (error,data) => {
 // if (error) {
