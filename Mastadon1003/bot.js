@@ -4,15 +4,21 @@ const config = require('./config.js');
 const Mastodon = require('mastodon-api')
 const M = new Mastodon(config);
 
+const stream = fs.createReadStream('kitte.jpg');
+
 const params = {
-  file: 'kitten.jpg',
+  file: stream,
   description: 'A cute grey kitten holding a blanket found on google image',
 }
 
-M.post('media', params).
+M.post('media', media).
 then(response => {
-  console.log(response);
-  fs.writeFilesSync('response.json',JSON.stringify(response, null, 2));
+  console.log(response.data.id);
+  // fs.writeFilesSync('response.json',JSON.stringify(response, null, 2));
+  const toot = {
+    status: 'Kitten!',
+    media_ids: [response.data]
+  }
 }).
 catch(error => console.log(error));
 
