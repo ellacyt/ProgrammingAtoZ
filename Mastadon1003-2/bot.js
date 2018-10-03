@@ -6,16 +6,16 @@ const Mastodon = require('mastodon-api');
 const fs = require('fs');
 
 const util = require('util');
-const exec = util.promisify(require'child_process').exec);
+const exec = util.promisify(require('child_process').exec);
 
-Const cmd = 'processing-java --sketch=`pwd`/squares --run';
+const cmd = 'processing-java --sketch=`pwd`/squares --run';
 exec(cmd).
-then(stdout, stderr) => {
+then(stdout, stderr => {
   console.log(stdout);
 }).
 catch(error => console.error(error));
 
-Const stream = fs.createReadStream(‘squares/output.png’);
+const stream = fs.createReadStream('squares/output.png');
 
 const M = new Mastodon(config);
 
