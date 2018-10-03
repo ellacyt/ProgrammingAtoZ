@@ -9,40 +9,37 @@ const M = new Mastodon(config);
 
 const cmd = 'processing-java --sketch=`pwd`/squares --run';
 
-setInterval(toot, 5000);
+toot().
+then(response => {
+  console.log(response);
+}).
+catch(error => console.log(error));
 
-function toot() {
-  exec(cmd).
-  then(response => {
-    console.log(response.stdout);
-    console.log(response.stderr);
-    const stream = fs.createReadStream('squares/output.png');
-    const media = {
+//setInterval(toot, 5000);
+
+async function toot() {
+  //Step 1: Run Processing
+  const response1 = await exec(cmd);
+  console.log(response1.stdout);
+
+  //Step 2: Post media
+  const stream = fs.createReadStream('squares/output.png');
+  const media = {
       file: stream,
       description: 'A random square',
-    };
-    return M.post('media', media);
-  }).
-  then(response => {
-    console.log(response.data.id);
-    // fs.writeFilesSync('response.json',JSON.stringify(response, null, 2));
-    const toot = {
-      status: 'Kitten!',
-      media_ids: [response.data.id]
-    }
-    return M.post('statuses',toot);
-  }).
-  then(response => {
-    console.log("Success!");
-    console.log(`id: ${response.data.id} at ${response.data.created_at}`);
-    console.log("FINISHED!")
-    const stream = fs.createReadStream('kitten.jpg');
-    const media = {
-    file: stream,
-    description: 'A cute grey kitten holding a blanket found on google image',
   };
-  }).
-  catch(error => console.log(error));
+  const response2 = await M.post('media', media);
+
+  //Step 3: Post status 
+  const toot = {
+      status: 'squares!',
+      media_ids: [response2.data.id]
+  };
+  const response3 = await M.post('statuses', toot);
+
+  console.log("Success!");
+  console.log(`id: ${response.data.id} at ${response.data.created_at}`);
+  console.log("FINISHED!")
 }
 
 
