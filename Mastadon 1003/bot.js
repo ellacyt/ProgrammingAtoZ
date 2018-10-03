@@ -18,10 +18,10 @@ function toot(){
     status: num
   }
 
-M.post('statues',params).
+M.post('statuses',params).
   then(response => {
   console.log("Success!");
-  console.log(`id: ${response.id} at ${response.created_at}`);
+  console.log(`id: ${response.data.id} at ${response.data.created_at}`);
 }).
   catch(error => {
   console.log("OOPS");
