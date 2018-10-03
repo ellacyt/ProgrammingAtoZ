@@ -60,5 +60,3 @@ catch(error => console.log(error));
 //   console.log(`id: ${data.id} at ${data.created_at}`);
 // }
 // });
-
-}
