@@ -45,8 +45,6 @@ async function toot() {
 
 // toot();
 
-// setInterval(toot, 1000*60*5);
-
 // function toot(){
 
 //   const num = Math.floor(Math.random()*100);
