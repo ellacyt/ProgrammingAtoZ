@@ -3,11 +3,7 @@ console.log('The bot is starting');
 const config = require('./config.js');
 const Mastodon = require('mastodon-api');
 const fs = require('fs');
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
 const M = new Mastodon(config);
-
-const cmd = 'processing-java --sketch=`pwd`/squares --run';
 
 toot().
 then(response => {
@@ -15,7 +11,7 @@ then(response => {
 }).
 catch(error => console.log(error));
 
-//setInterval(toot, 5000);
+setInterval(toot, 5000);
 
 async function toot() {
   //Step 1: Run Processing
