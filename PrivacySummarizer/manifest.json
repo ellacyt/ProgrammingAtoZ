@@ -1,0 +1,24 @@
+{
+  "manifest_version":2,
+  "name": "Privacy Summarizer",
+  "version": "2.0", 
+  "description": "This extensions searches on a page and summarize highlighted keyword.",
+  "content_scripts":[
+    {
+      "matches":[
+        "<all_urls>"
+      ],
+      "js":["content.js"]
+    }
+  ],
+  "background": {
+    "scripts":["background.js"]
+  },
+  "browser_action":{
+    "default_popup":"sketch/index.html",
+    "default_title":"Lookup keyword to summarize"
+  },
+  "permissions": [
+    "activeTab"
+  ]
+}

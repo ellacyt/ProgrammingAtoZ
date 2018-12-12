@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Privacy Summarizer</title>
+    <script src="libraries/p5.js" type="text/javascript"></script>
+    <script src="libraries/p5.dom.js" type="text/javascript"></script>
+    <script src="sketch.js" type="text/javascript"></script>
+
+    <script src="lib/lodash/lodash.js" type="text/javascript"></script>
+    <script src="lib/jquery/jquery.js" type="text/javascript"></script>
+    <script src="lib/tokenizer/tokenizer.js" type="text/javascript"></script>
+    <script src="js-summarize.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <h1>Privacy Summarizer</h1>
+    <label for="title">Keywords:</label><br>
+    <input type="text" id="title" placeholder="type keyword here" /><br>
+    <p id="input"></p>
+    <input type="button" id="split" value="Summarize"/>
+    <h2 class="title"></h2>
+    <ul class="teasers"></ul>
+  </body>
+</html>
